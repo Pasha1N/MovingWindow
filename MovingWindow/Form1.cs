@@ -17,22 +17,25 @@ namespace MovingWindow
        private ICollection<Command> commands = new List<Command>();
         private ICollection<IDirection> directions = new List<IDirection>();
         private Point location = new Point();
+        private WrapperOverPoint wrapperOverLocetion;
 
         private Rectangle screenSize = Screen.PrimaryScreen.Bounds;
 
         public Form1()
         {
             InitializeComponent();
+            wrapperOverLocetion = new WrapperOverPoint(location);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-          //  commands.Clear();
-          //  directions.Clear();
+              //commands.Clear();
+             // directions.Clear();
             int step = 6;
             location.X = Location.X;
             location.Y = Location.Y;
-            WrapperOverPoint wrapperOverLocetion = new WrapperOverPoint(location);
+            wrapperOverLocetion.X = location.X;
+            wrapperOverLocetion.Y = location.Y;
 
             Down down = new Down(wrapperOverLocetion, step, screenSize.Height,Size.Height);
             Up up = new Up(wrapperOverLocetion, step);
@@ -60,9 +63,11 @@ namespace MovingWindow
             }
 
             location = wrapperOverLocetion.Dot;
+            kk.Start();
+
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) 
         {
             foreach (Command command in commands)
             {
@@ -70,6 +75,7 @@ namespace MovingWindow
             }
 
             Location = location;
+           Location = wrapperOverLocetion.Dot;
         }
     }
 }

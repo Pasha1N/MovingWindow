@@ -17,3 +17,13 @@ C:\Users\User\Desktop\MovingWindow\MovingWindow\obj\Debug\MovingWindow.csproj.Ge
 C:\Users\User\Desktop\MovingWindow\MovingWindow\obj\Debug\MovingWindow.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\MovingWindow\MovingWindow\obj\Debug\MovingWindow.exe
 C:\Users\User\Desktop\MovingWindow\MovingWindow\obj\Debug\MovingWindow.pdb
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\bin\Debug\MovingWindow.exe.config
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\bin\Debug\MovingWindow.exe
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\bin\Debug\MovingWindow.pdb
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\obj\Debug\MovingWindow.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\obj\Debug\MovingWindow.Form1.resources
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\obj\Debug\MovingWindow.Properties.Resources.resources
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\obj\Debug\MovingWindow.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\obj\Debug\MovingWindow.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\obj\Debug\MovingWindow.exe
+C:\Users\User\Desktop\Pasha computer\Паша\Windows Forms\Home Work\MovingWindow\MovingWindow\obj\Debug\MovingWindow.pdb
