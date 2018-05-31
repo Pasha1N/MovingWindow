@@ -13,13 +13,14 @@ namespace MovingWindow.CommandsTheMoves
         {
             this.locetion = locetion;
             this.step = step;
-            y = locetion.Y;
         }
 
         override public void Executive()
         {
             if (ThisCurrentDirection)
             {
+                y = locetion.Y;
+
                 if (y - step > 0)
                 {
                     locetion.Y = y - step;

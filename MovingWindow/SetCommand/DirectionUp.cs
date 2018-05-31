@@ -6,22 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MovingWindow.SetsDirection
+namespace MovingWindow.SetCommand
 {
-    class DirectionInRight : IDirection
+    class DirectionUp : IDirection
     {
-        private Right right;
+        private Up up;
 
-        public DirectionInRight(Right right)
+        public DirectionUp(Up up)
         {
-            this.right = right;
+            this.up = up;
         }
 
         public void Executive(Keys key)
         {
-            if (key == Keys.Right)
+            if (key == Keys.Up)
             {
-                right.ThisCurrentDirection = true;
+                up.ThisCurrentDirection = true;
+
             }
         }
     }

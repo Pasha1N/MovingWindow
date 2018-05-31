@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.kk = new System.Windows.Forms.Timer(this.components);
+            this.intervalBetweenOperations = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // kk
+            // intervalBetweenOperations
             // 
-            this.kk.Tick += new System.EventHandler(this.timer1_Tick);
+            this.intervalBetweenOperations.Interval = 20;
+            this.intervalBetweenOperations.Tick += new System.EventHandler(this.IntervalBetweenOperations);
             // 
             // Form1
             // 
@@ -42,6 +43,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -52,7 +54,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer kk;
+        private System.Windows.Forms.Timer intervalBetweenOperations;
     }
 }
 

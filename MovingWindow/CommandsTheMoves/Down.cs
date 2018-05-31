@@ -16,13 +16,14 @@ namespace MovingWindow.CommandsTheMoves
             this.step = step;
             this.maximumScreenHeight = maximumScreenHeight;
             this.heightFrame = heightFrame;
-            y = locetion.Y;
         }
 
         override public void Executive()
         {
             if (ThisCurrentDirection)
             {
+                y = locetion.Y;
+
                 if (y + (step + heightFrame) < maximumScreenHeight)
                 {
                     locetion.Y = y + step;
