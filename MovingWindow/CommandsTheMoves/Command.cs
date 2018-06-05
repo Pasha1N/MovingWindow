@@ -4,11 +4,11 @@ namespace MovingWindow.CommandsTheMoves
 {
     abstract class Command
     {
-        private bool thisCurrentDirection = false;
-        public bool ThisCurrentDirection
+        private bool do_I_It = false;
+        public bool Do_I_It
         {
-            get { return thisCurrentDirection; }
-            set { thisCurrentDirection = value; }
+            get { return do_I_It; }
+            set { do_I_It = value; }
         }
 
         abstract public void Executive();

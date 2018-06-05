@@ -20,7 +20,7 @@ namespace MovingWindow.SetCommand
         {
             if (key == Keys.Left)
             {
-                left.ThisCurrentDirection = true;
+                left.Do_I_It = true;
             }
         }
     }

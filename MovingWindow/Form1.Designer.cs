@@ -54,7 +54,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer intervalBetweenOperations;
+        public System.Windows.Forms.Timer intervalBetweenOperations;
     }
 }
 

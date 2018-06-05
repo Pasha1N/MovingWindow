@@ -16,7 +16,7 @@ namespace MovingWindow.SetCommand
         {
             if (key == Keys.Enter)
             {
-                stop.ToStop = true;
+                stop.Do_I_It = true;
             }
         }
     }

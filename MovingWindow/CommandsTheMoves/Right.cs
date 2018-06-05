@@ -21,7 +21,7 @@ namespace MovingWindow.CommandsTheMoves
 
         override public void Executive()
         {
-            if (ThisCurrentDirection)
+            if (Do_I_It)
             {
                 x = locetion.X;
 

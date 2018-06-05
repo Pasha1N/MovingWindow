@@ -20,6 +20,8 @@ namespace MovingWindow
         private WrapperOverPoint wrapperOverLocetion;
         private int step = 6;
         private Rectangle screenSize = Screen.PrimaryScreen.Bounds;
+        private int f=0;
+
 
         public Form1()
         {
@@ -41,7 +43,7 @@ namespace MovingWindow
             Up up = new Up(wrapperOverLocetion, step);
             Left left = new Left(wrapperOverLocetion, step);
             Right rigth = new Right(wrapperOverLocetion, step, screenSize.Width, Size.Width);
-            Stop stop = new Stop(this);
+            Stop stop = new Stop(this,screenSize);
 
             commands.Add(down);
             commands.Add(up);
@@ -82,38 +84,45 @@ namespace MovingWindow
                 command.Executive();
             }
 
-            Location = wrapperOverLocetion.Dot;
+            if (commands[commands.Count-1].Do_I_It)
+            {
+                intervalBetweenOperations.Stop(); 
+            }
+            else
+            {
+                Location = wrapperOverLocetion.Dot;
+            }
         }
 
         public void SetsDirection()
         {
             for (int i = 0; i < commands.Count; i++)
             {
-                if (commands[i].ThisCurrentDirection && commands[i] is Down)
+                if (commands[i].Do_I_It && commands[i] is Down)
                 {
-                    commands[i].ThisCurrentDirection = false;
-                    commands[i + 1].ThisCurrentDirection = true;
+                    commands[i].Do_I_It = false;
+                    commands[i + 1].Do_I_It = true;
                     break;
                 }
 
-                if (commands[i].ThisCurrentDirection && commands[i] is Up)
+                if (commands[i].Do_I_It && commands[i] is Up)
                 {
-                    commands[i].ThisCurrentDirection = false;
-                    commands[i - 1].ThisCurrentDirection = true;
+                    commands[i].Do_I_It = false;
+                    commands[i - 1].Do_I_It = true;
                     break;
                 }
 
-                if (commands[i].ThisCurrentDirection && commands[i] is Left)
+                if (commands[i].Do_I_It && commands[i] is Left)
                 {
-                    commands[i].ThisCurrentDirection = false;
-                    commands[i + 1].ThisCurrentDirection = true;
+                    commands[i].Do_I_It = false;
+                    commands[i + 1].Do_I_It = true;
                     break;
                 }
 
-                if (commands[i].ThisCurrentDirection && commands[i] is Right)
+                if (commands[i].Do_I_It && commands[i] is Right)
                 {
-                    commands[i].ThisCurrentDirection = false;
-                    commands[i - 1].ThisCurrentDirection = true;
+                    commands[i].Do_I_It = false;
+                    commands[i - 1].Do_I_It = true;
                     break;
                 }
             }

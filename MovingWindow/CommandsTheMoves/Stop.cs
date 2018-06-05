@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace MovingWindow.CommandsTheMoves
 {
@@ -6,23 +7,22 @@ namespace MovingWindow.CommandsTheMoves
     {
         private bool stop = false;
         private Form1 form;
+        Rectangle screenSize;
 
-        public Stop(Form1 form)
+        public Stop(Form1 form, Rectangle screenSize)
         {
             this.form = form;
-        }
-
-        public bool ToStop
-        {
-            get { return stop; }
-            set { stop = value; }
+            this.screenSize = screenSize;
         }
 
         public override void Executive()
         {
-            if (stop)
+            if (Do_I_It)
             {
-                form.StartPosition = FormStartPosition.CenterScreen;
+                Point location = new Point();
+                location.X = screenSize.Width/ 2;// - form.Width / 2;
+                location.Y = screenSize.Height / 2;// - form.Height / 2;
+                form.Location = location;
             }
         }
     }

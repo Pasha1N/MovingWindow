@@ -21,7 +21,7 @@ namespace MovingWindow.SetCommand
         {
             if (key == Keys.Down)
             {
-                down.ThisCurrentDirection = true;
+                down.Do_I_It = true;
 
             }
         }
