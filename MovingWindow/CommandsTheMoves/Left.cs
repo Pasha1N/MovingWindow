@@ -1,13 +1,10 @@
-﻿using System.Windows.Forms;
-
-namespace MovingWindow.CommandsTheMoves
+﻿namespace MovingWindow.CommandsTheMoves
 {
-    class Left : Command
+    internal class Left : Command
     {
         private WrapperOverPoint locetion;
-        int x;
         private int step;
-
+        private int x;
 
         public Left(WrapperOverPoint locetion, int step)
         {

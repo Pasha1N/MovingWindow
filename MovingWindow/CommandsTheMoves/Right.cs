@@ -1,15 +1,12 @@
-﻿using System.Windows.Forms;
-
-namespace MovingWindow.CommandsTheMoves
+﻿namespace MovingWindow.CommandsTheMoves
 {
-    class Right : Command
+    internal class Right : Command
     {
         private WrapperOverPoint locetion;
-        private int x;
-        private int widthFrame;
         private int maximumScreenWidth;
         private int step;
-
+        private int widthFrame;
+        private int x;
 
         public Right(WrapperOverPoint locetion, int step, int maximumScreenWidth, int widthFrame)
         {

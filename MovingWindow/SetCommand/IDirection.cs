@@ -1,14 +1,8 @@
-﻿using MovingWindow.CommandsTheMoves;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace MovingWindow.SetCommand
 {
-    interface IDirection
+    internal interface IDirection
     {
         void Executive(Keys key);
     }

@@ -2,10 +2,10 @@
 
 namespace MovingWindow
 {
-    class WrapperOverPoint
+    internal class WrapperOverPoint
     {
         private Point point;
-       
+
         public WrapperOverPoint(Point point)
         {
             this.point = point;
@@ -20,7 +20,7 @@ namespace MovingWindow
         public int X
         {
             get { return point.X; }
-            set { point.X = value;  }
+            set { point.X = value; }
         }
 
         public int Y

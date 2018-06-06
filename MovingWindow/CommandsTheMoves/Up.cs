@@ -2,12 +2,11 @@
 
 namespace MovingWindow.CommandsTheMoves
 {
-    class Up : Command
+    internal class Up : Command
     {
         private WrapperOverPoint locetion;
-        int y;
         private int step;
-
+        private int y;
 
         public Up(WrapperOverPoint locetion, int step)
         {

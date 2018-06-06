@@ -1,14 +1,9 @@
 ﻿using MovingWindow.CommandsTheMoves;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MovingWindow.SetCommand
 {
-    class DownwardDirection : IDirection
+    internal class DownwardDirection : IDirection
     {
         private Down down;
 
@@ -22,7 +17,6 @@ namespace MovingWindow.SetCommand
             if (key == Keys.Down)
             {
                 down.Do_I_It = true;
-
             }
         }
     }

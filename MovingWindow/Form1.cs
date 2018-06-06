@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MovingWindow.CommandsTheMoves;
 using MovingWindow.SetCommand;
@@ -17,11 +12,9 @@ namespace MovingWindow
         private IList<Command> commands = new List<Command>();
         private ICollection<IDirection> directions = new List<IDirection>();
         private Point location = new Point();
-        private WrapperOverPoint wrapperOverLocetion;
-        private int step = 6;
         private Rectangle screenSize = Screen.PrimaryScreen.Bounds;
-        private int f=0;
-
+        private int step = 6;
+        private WrapperOverPoint wrapperOverLocetion;
 
         public Form1()
         {
@@ -43,7 +36,7 @@ namespace MovingWindow
             Up up = new Up(wrapperOverLocetion, step);
             Left left = new Left(wrapperOverLocetion, step);
             Right rigth = new Right(wrapperOverLocetion, step, screenSize.Width, Size.Width);
-            Stop stop = new Stop(this,screenSize);
+            Stop stop = new Stop(this, screenSize);
 
             commands.Add(down);
             commands.Add(up);
@@ -74,7 +67,9 @@ namespace MovingWindow
 
         private void IntervalBetweenOperations(object sender, EventArgs e)
         {
-            if (Location.Y <= step || Location.Y > (screenSize.Height - step) - Size.Height || Location.X <= step || Location.X > (screenSize.Width - step) - Size.Width)
+            int frameSize = 30;
+
+            if (Location.Y <= step || Location.Y > screenSize.Height - step - Size.Height - frameSize || Location.X <= step || Location.X > screenSize.Width - step - Size.Width)
             {
                 SetsDirection();
             }
@@ -84,9 +79,9 @@ namespace MovingWindow
                 command.Executive();
             }
 
-            if (commands[commands.Count-1].Do_I_It)
+            if (commands[commands.Count - 1].Do_I_It)
             {
-                intervalBetweenOperations.Stop(); 
+                intervalBetweenOperations.Stop();
             }
             else
             {

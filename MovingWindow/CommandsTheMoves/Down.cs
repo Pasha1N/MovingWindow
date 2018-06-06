@@ -1,14 +1,12 @@
-﻿using System.Windows.Forms;
-
-namespace MovingWindow.CommandsTheMoves
+﻿namespace MovingWindow.CommandsTheMoves
 {
-    class Down : Command
+    internal class Down : Command
     {
         private WrapperOverPoint locetion;
-        private int y;
         private int heightFrame;
         private int maximumScreenHeight;
         private int step;
+        private int y;
 
         public Down(WrapperOverPoint locetion, int step, int maximumScreenHeight, int heightFrame)
         {
