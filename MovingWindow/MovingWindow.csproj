@@ -64,6 +64,7 @@
     <Compile Include="SetCommand\DirectionLeft.cs" />
     <Compile Include="SetCommand\DirectionUp.cs" />
     <Compile Include="SetCommand\DownwardDirection.cs" />
+    <Compile Include="SetCommand\ISetOppositeDirection.cs" />
     <Compile Include="SetCommand\SetStop.cs" />
     <Compile Include="WrapperOverPoint.cs" />
     <EmbeddedResource Include="Form1.resx">

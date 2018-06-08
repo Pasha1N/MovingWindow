@@ -71,7 +71,10 @@ namespace MovingWindow
 
             if (Location.Y <= step || Location.Y > screenSize.Height - step - Size.Height - frameSize || Location.X <= step || Location.X > screenSize.Width - step - Size.Width)
             {
-                SetsDirection();
+                foreach (IDirection direction in directions)
+                {
+                   
+                }
             }
 
             foreach (Command command in commands)
@@ -89,38 +92,38 @@ namespace MovingWindow
             }
         }
 
-        public void SetsDirection()
-        {
-            for (int i = 0; i < commands.Count; i++)
-            {
-                if (commands[i].Do_I_It && commands[i] is Down)
-                {
-                    commands[i].Do_I_It = false;
-                    commands[i + 1].Do_I_It = true;
-                    break;
-                }
+        //public void SetsDirection()
+        //{
+        //    for (int i = 0; i < commands.Count; i++)
+        //    {
+        //        if (commands[i].Do_I_It && commands[i] is Down)
+        //        {
+        //            commands[i].Do_I_It = false;
+        //            commands[i + 1].Do_I_It = true;
+        //            break;
+        //        }
 
-                if (commands[i].Do_I_It && commands[i] is Up)
-                {
-                    commands[i].Do_I_It = false;
-                    commands[i - 1].Do_I_It = true;
-                    break;
-                }
+        //        if (commands[i].Do_I_It && commands[i] is Up)
+        //        {
+        //            commands[i].Do_I_It = false;
+        //            commands[i - 1].Do_I_It = true;
+        //            break;
+        //        }
 
-                if (commands[i].Do_I_It && commands[i] is Left)
-                {
-                    commands[i].Do_I_It = false;
-                    commands[i + 1].Do_I_It = true;
-                    break;
-                }
+        //        if (commands[i].Do_I_It && commands[i] is Left)
+        //        {
+        //            commands[i].Do_I_It = false;
+        //            commands[i + 1].Do_I_It = true;
+        //            break;
+        //        }
 
-                if (commands[i].Do_I_It && commands[i] is Right)
-                {
-                    commands[i].Do_I_It = false;
-                    commands[i - 1].Do_I_It = true;
-                    break;
-                }
-            }
-        }
+        //        if (commands[i].Do_I_It && commands[i] is Right)
+        //        {
+        //            commands[i].Do_I_It = false;
+        //            commands[i - 1].Do_I_It = true;
+        //            break;
+        //        }
+        //    }
+        //}
     }
 }
