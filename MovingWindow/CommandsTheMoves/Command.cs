@@ -2,12 +2,12 @@
 {
     internal abstract class Command
     {
-        private bool do_I_It = false;
+        private bool doIIt = false;
 
-        public bool Do_I_It
+        public bool DoIIt
         {
-            get { return do_I_It; }
-            set { do_I_It = value; }
+            get { return doIIt; }
+            set { doIIt = value; }
         }
 
         abstract public void Executive();

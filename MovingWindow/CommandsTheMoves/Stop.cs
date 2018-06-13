@@ -15,7 +15,7 @@ namespace MovingWindow.CommandsTheMoves
 
         public override void Executive()
         {
-            if (Do_I_It)
+            if (DoIIt)
             {
                 Point location = new Point();
                 location.X = screenSize.Width / 2 - form.Width / 2;

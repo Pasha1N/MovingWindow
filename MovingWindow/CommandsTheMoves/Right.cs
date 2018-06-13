@@ -18,7 +18,7 @@
 
         override public void Executive()
         {
-            if (Do_I_It)
+            if (DoIIt)
             {
                 x = location.X;
 

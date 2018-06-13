@@ -18,7 +18,7 @@ namespace MovingWindow.SetCommand
         {
             if (key == Keys.Right)
             {
-                right.Do_I_It = true;
+                right.DoIIt = true;
             }
         }
 
@@ -28,12 +28,12 @@ namespace MovingWindow.SetCommand
             {
                 if (command is Left)
                 {
-                    command.Do_I_It = true;
+                    command.DoIIt = true;
                 }
 
                 if (command is Right)
                 {
-                    command.Do_I_It = false;
+                    command.DoIIt = false;
                 }
             }
         }

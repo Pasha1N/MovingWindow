@@ -82,7 +82,7 @@ namespace MovingWindow
                 command.Executive();
             }
 
-            if (commands[commands.Count - 1].Do_I_It)
+            if (commands[commands.Count - 1].DoIIt)
             {
                 intervalBetweenOperations.Stop();
             }

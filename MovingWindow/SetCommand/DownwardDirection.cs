@@ -18,7 +18,7 @@ namespace MovingWindow.SetCommand
         {
             if (key == Keys.Down)
             {
-                down.Do_I_It = true;
+                down.DoIIt = true;
             }
         }
 
@@ -28,12 +28,12 @@ namespace MovingWindow.SetCommand
             {
                 if (command is Down)
                 {
-                    command.Do_I_It = false;
+                    command.DoIIt = false;
                 }
 
                 if (command is Right)
                 {
-                    command.Do_I_It = true;
+                    command.DoIIt = true;
                 }
             }
         }
