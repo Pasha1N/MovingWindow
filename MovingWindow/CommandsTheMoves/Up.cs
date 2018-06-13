@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace MovingWindow.CommandsTheMoves
+﻿namespace MovingWindow.CommandsTheMoves
 {
     internal class Up : Command
     {
