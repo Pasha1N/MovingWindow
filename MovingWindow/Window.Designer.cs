@@ -1,6 +1,6 @@
 ﻿namespace MovingWindow
 {
-    partial class Form1
+    partial class Window
     {
         /// <summary>
         /// Обязательная переменная конструктора.

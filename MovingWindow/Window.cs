@@ -7,7 +7,7 @@ using MovingWindow.SetCommand;
 
 namespace MovingWindow
 {
-    public partial class Form1 : Form
+    public partial class Window : Form
     {
         private IList<Command> commands = new List<Command>();
         private ICollection<IDirection> directions = new List<IDirection>();
@@ -16,7 +16,7 @@ namespace MovingWindow
         private int step = 6;
         private WrapperOverPoint wrapperOverLocetion;
 
-        public Form1()
+        public Window()
         {
             InitializeComponent();
             wrapperOverLocetion = new WrapperOverPoint(location);

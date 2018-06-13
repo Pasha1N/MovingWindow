@@ -2,15 +2,15 @@
 {
     internal class Right : Command
     {
-        private WrapperOverPoint locetion;
+        private WrapperOverPoint location;
         private int maximumScreenWidth;
         private int step;
         private int widthFrame;
         private int x;
 
-        public Right(WrapperOverPoint locetion, int step, int maximumScreenWidth, int widthFrame)
+        public Right(WrapperOverPoint location, int step, int maximumScreenWidth, int widthFrame)
         {
-            this.locetion = locetion;
+            this.location = location;
             this.step = step;
             this.maximumScreenWidth = maximumScreenWidth;
             this.widthFrame = widthFrame;
@@ -20,11 +20,11 @@
         {
             if (Do_I_It)
             {
-                x = locetion.X;
+                x = location.X;
 
                 if (x + (step + widthFrame) < maximumScreenWidth)
                 {
-                    locetion.X = x + step;
+                    location.X = x + step;
                 }
             }
         }

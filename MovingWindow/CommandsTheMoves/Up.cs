@@ -4,13 +4,13 @@ namespace MovingWindow.CommandsTheMoves
 {
     internal class Up : Command
     {
-        private WrapperOverPoint locetion;
+        private WrapperOverPoint location;
         private int step;
         private int y;
 
-        public Up(WrapperOverPoint locetion, int step)
+        public Up(WrapperOverPoint location, int step)
         {
-            this.locetion = locetion;
+            this.location = location;
             this.step = step;
         }
 
@@ -18,11 +18,11 @@ namespace MovingWindow.CommandsTheMoves
         {
             if (Do_I_It)
             {
-                y = locetion.Y;
+                y = location.Y;
 
                 if (y - step > 0)
                 {
-                    locetion.Y = y - step;
+                    location.Y = y - step;
                 }
             }
         }

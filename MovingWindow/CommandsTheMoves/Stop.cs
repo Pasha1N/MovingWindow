@@ -4,10 +4,10 @@ namespace MovingWindow.CommandsTheMoves
 {
     internal class Stop : Command
     {
-        private Form1 form;
+        private Window form;
         private Rectangle screenSize;
 
-        public Stop(Form1 form, Rectangle screenSize)
+        public Stop(Window form, Rectangle screenSize)
         {
             this.form = form;
             this.screenSize = screenSize;

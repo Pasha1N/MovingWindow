@@ -2,13 +2,13 @@
 {
     internal class Left : Command
     {
-        private WrapperOverPoint locetion;
+        private WrapperOverPoint location;
         private int step;
         private int x;
 
-        public Left(WrapperOverPoint locetion, int step)
+        public Left(WrapperOverPoint location, int step)
         {
-            this.locetion = locetion;
+            this.location = location;
             this.step = step;
         }
 
@@ -16,11 +16,11 @@
         {
             if (Do_I_It)
             {
-                x = locetion.X;
+                x = location.X;
 
                 if (x - step > 0)
                 {
-                    locetion.X = x - step;
+                    location.X = x - step;
                 }
             }
         }

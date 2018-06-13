@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace MovingWindow.SetCommand
 {
-    internal class DirectionInRight : IDirection, ISetOppositeDirectio
+    internal class DirectionInRight : IDirection, ISetOppositeDirection
     {
         private Right right;
         private IList<Command> commands = new List<Command>();
