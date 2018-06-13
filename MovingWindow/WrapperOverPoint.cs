@@ -20,13 +20,13 @@ namespace MovingWindow
         public int X
         {
             get { return point.X; }
-            set { point.X = value; }
+            set { value = point.X; }
         }
 
         public int Y
         {
             get { return point.Y; }
-            set { point.Y = value; }
+            set { value = point.Y; }
         }
     }
 }
