@@ -16,7 +16,7 @@
             this.widthFrame = widthFrame;
         }
 
-        override public void Executive()
+        public override void Executive()
         {
             if (DoIIt)
             {
