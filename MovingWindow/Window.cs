@@ -11,6 +11,7 @@ namespace MovingWindow
     {
         private IList<Command> commands = new List<Command>();
         private ICollection<IDirection> directions = new List<IDirection>();
+        private ICollection<ISetOppositeDirection> oppositeDirections = new List<ISetOppositeDirection>();
         private Point location = new Point();
         private Rectangle screenSize = Screen.PrimaryScreen.Bounds;
         private int step = 6;
@@ -26,6 +27,7 @@ namespace MovingWindow
         {
             commands.Clear();
             directions.Clear();
+            oppositeDirections.Clear();
 
             location.X = Location.X;
             location.Y = Location.Y;
@@ -56,6 +58,11 @@ namespace MovingWindow
             directions.Add(downwardDirection);
             directions.Add(setStop);
 
+            oppositeDirections.Add(directionInRight);
+            oppositeDirections.Add(directionLeft);
+            oppositeDirections.Add(downwardDirection);
+            oppositeDirections.Add(directionUp);
+
             foreach (IDirection direction in directions)
             {
                 direction.Executive(e.KeyCode);
@@ -68,12 +75,16 @@ namespace MovingWindow
         private void IntervalBetweenOperations(object sender, EventArgs e)
         {
             int frameSize = 30;
+            LookFor lookFor = new LookFor();
 
             if (Location.Y <= step || Location.Y > screenSize.Height - step - Size.Height - frameSize || Location.X <= step || Location.X > screenSize.Width - step - Size.Width)
             {
-                foreach (IDirection direction in directions)
+                foreach (ISetOppositeDirection oppositeDirection in oppositeDirections)
                 {
-                   
+                    if (!lookFor.Found)
+                    {
+                        oppositeDirection.SetOppositeDirection(commands, oppositeDirection, lookFor);
+                    }
                 }
             }
 
@@ -91,39 +102,5 @@ namespace MovingWindow
                 Location = wrapperOverLocetion.Dot;
             }
         }
-
-        //public void SetsDirection()
-        //{
-        //    for (int i = 0; i < commands.Count; i++)
-        //    {
-        //        if (commands[i].Do_I_It && commands[i] is Down)
-        //        {
-        //            commands[i].Do_I_It = false;
-        //            commands[i + 1].Do_I_It = true;
-        //            break;
-        //        }
-
-        //        if (commands[i].Do_I_It && commands[i] is Up)
-        //        {
-        //            commands[i].Do_I_It = false;
-        //            commands[i - 1].Do_I_It = true;
-        //            break;
-        //        }
-
-        //        if (commands[i].Do_I_It && commands[i] is Left)
-        //        {
-        //            commands[i].Do_I_It = false;
-        //            commands[i + 1].Do_I_It = true;
-        //            break;
-        //        }
-
-        //        if (commands[i].Do_I_It && commands[i] is Right)
-        //        {
-        //            commands[i].Do_I_It = false;
-        //            commands[i - 1].Do_I_It = true;
-        //            break;
-        //        }
-        //    }
-        //}
     }
 }

@@ -5,6 +5,8 @@ namespace MovingWindow.SetCommand
 {
     internal interface ISetOppositeDirection
     {
-        void SetOppositeDirection(IList<Command> commands);
+        void SetOppositeDirection(IEnumerable<Command> commands, ISetOppositeDirection direction, LookFor lookFor);
+
+        bool CurrentDirection { get; }
     }
 }

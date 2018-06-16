@@ -14,6 +14,11 @@ namespace MovingWindow.SetCommand
             this.down = down;
         }
 
+        public bool CurrentDirection
+        {
+            get { return down.DoIIt; }
+        }
+
         public void Executive(Keys key)
         {
             if (key == Keys.Down)
@@ -22,19 +27,26 @@ namespace MovingWindow.SetCommand
             }
         }
 
-        public void SetOppositeDirection(IList<Command> commands)
+        public void SetOppositeDirection(IEnumerable<Command> commands, ISetOppositeDirection currrentDirection, LookFor lookFor)
         {
-            foreach (Command command in commands)
+            if (currrentDirection.CurrentDirection)
             {
-                if (command is Down)
+                foreach (Command command in commands)
                 {
-                    command.DoIIt = false;
-                }
+                    if (currrentDirection is DownwardDirection)
+                    {
+                        if (command is Down)
+                        {
+                            command.DoIIt = false;
+                        }
 
-                if (command is Right)
-                {
-                    command.DoIIt = true;
+                        if (command is Up)
+                        {
+                            command.DoIIt = true;
+                        }
+                    }
                 }
+                lookFor.Found = true;
             }
         }
     }

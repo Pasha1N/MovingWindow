@@ -51,6 +51,7 @@
     <Compile Include="CommandsTheMoves\Right.cs" />
     <Compile Include="CommandsTheMoves\Stop.cs" />
     <Compile Include="CommandsTheMoves\Up.cs" />
+    <Compile Include="LookFor.cs" />
     <Compile Include="Window.cs">
       <SubType>Form</SubType>
     </Compile>

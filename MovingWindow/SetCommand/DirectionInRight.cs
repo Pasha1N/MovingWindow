@@ -7,11 +7,15 @@ namespace MovingWindow.SetCommand
     internal class DirectionInRight : IDirection, ISetOppositeDirection
     {
         private Right right;
-        private IList<Command> commands = new List<Command>();
 
         public DirectionInRight(Right right)
         {
             this.right = right;
+        }
+
+        public bool CurrentDirection
+        {
+            get { return right.DoIIt; }
         }
 
         public void Executive(Keys key)
@@ -22,19 +26,23 @@ namespace MovingWindow.SetCommand
             }
         }
 
-        public void SetOppositeDirection(IList<Command> commands)
+        public void SetOppositeDirection(IEnumerable<Command> commands, ISetOppositeDirection currrentDirection, LookFor lookFor)
         {
-            foreach (Command command in commands)
+            if (currrentDirection.CurrentDirection)
             {
-                if (command is Left)
+                foreach (Command command in commands)
                 {
-                    command.DoIIt = true;
-                }
+                    if (command is Left)
+                    {
+                        command.DoIIt = true;
+                    }
 
-                if (command is Right)
-                {
-                    command.DoIIt = false;
+                    if (command is Right)
+                    {
+                        command.DoIIt = false;
+                    }
                 }
+                lookFor.Found = true;
             }
         }
     }
